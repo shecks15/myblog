@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/head.ejs")%>
+    <title>Document</title>
+</head>
+<body>
+    <%- include("partials/header.ejs")%>
+    <div class="edit-container">
+        <h2 class="edit-title">Редактировать блог</h2>
+        <form action="/api/blogs/edit" method="POST" id="editBlogForm" class="edit-form" enctype="multipart/form-data">
+            <fieldset >
+                <input type="hidden" value="<%= blogs._id%>" name="id">
+            </fieldset>
+            <div class="form-group">
+                <label for="blogTitle" class="form-label">Введите заголовок блога:</label>
+                <input type="text" value="<%= blogs.blogTitle%>" id="blogTitle" name="blogTitle" class="form-input" required>
+            </div>
+            <div class="form-group">
+                <label for="category" class="form-label">Выберите категорию:</label>
+                <select id="category" name="category" class="form-select" required>
+                    <option value="">--Выберите категорию--</option>
+                    <option value="programming" <%= blogs.category === 'programming' ? 'selected' : '' %>>Программирование</option>
+                    <option value="web-development" <%= blogs.category === 'web-development' ? 'selected' : '' %>>Веб-разработка</option>
+                    <option value="design" <%= blogs.category === 'design' ? 'selected' : '' %>>Дизайн</option>
+                    <option value="ai" <%= blogs.category === 'ai' ? 'selected' : '' %>>Искусственный интеллект</option>
+                    <option value="freelance" <%= blogs.category === 'freelance' ? 'selected' : '' %>>Фриланс</option>
+                    <option value="game-dev" <%= blogs.category === 'game-dev' ? 'selected' : '' %>>Разработка игр</option>
+                    <option value="machine-learning" <%= blogs.category === 'machine-learning' ? 'selected' : '' %>>Машинное обучение</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="imageUpload" class="form-label">Выберите картинку:</label>
+                <input type="file" id="imageUpload" name="image" class="form-input" accept="image/*" required>
+            </div>
+            <div class="form-group">
+                <label for="blogDescription" class="form-label">Введите описание блога:</label>
+                <textarea id="blogDescription" name="blogDescription" class="form-textarea" rows="5" required><%= blogs && blogs.blogDescription ? blogs.blogDescription : '' %></textarea>
+            </div>
+            <button type="submit" class="submit-button">Сохранить</button>
+        </form>
+    </div>
+    <%- include("partials/script.ejs")%>
+</body>
+</html>

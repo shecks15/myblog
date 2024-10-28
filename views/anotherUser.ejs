@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/head.ejs")%>
+    <title>Document</title>
+</head>
+<body>
+    <%- include("partials/header.ejs")%>
+    <div class="container container-changed">
+        <% 
+            if (blogs.length === 0) { 
+        %>
+            <div class="no-blogs">
+                    <h2>У этого пользователя еще нет блогов</h2>
+            </div>
+        <% } else { %>
+        <%
+            blogs.forEach(item => {
+        %>
+        <div class="left-container">
+            <img id="blogImage" src="<%= item.image %>" alt="">
+            <div class="bottom-text">
+                <div class="left-container-body">
+                    <h2><%=item.blogTitle%></h2>
+                </div>
+                <p>
+                    <%=item.blogDescription%>   
+                </p>
+            </div>
+            <div class="footer">
+                <div class="date">
+                    <img src="/images/date.svg" alt="">
+                    <p>26.06.2020</p>
+                </div>
+                <div class="date">
+                    <img src="/images/glaz.svg" alt="">
+                    <p>21</p>
+                </div>
+                <div class="date">
+                    <a href="/notLogged/<%=item._id%>">
+                        <img src="/images/message.svg" alt="">
+                    </a>
+                    <p>4</p>
+                </div>
+                <div class="date">
+                    <img src="/images/forums.svg" alt="">
+                    <%= item.category %>
+                </div>
+            </div>
+            <hr class="divider"> 
+        </div>
+        <%  
+            })
+        %>
+        <% } %>
+        <div class="right-container right-container-changed">
+            <img src="/images/person.svg" alt="">
+            <h2><%=author.full_name%></h2>
+            <% 
+                if(author.isAdmin){
+            %>
+                <p>В основном пишу про <br>веб - разработку, на React & Redux</p><br>
+                <p>285 постов за все время</p>
+                <button id="edit">Редактировать</button>
+            <%
+                }
+            %>
+        </div>
+    </div>
+    <%- include("partials/script.ejs")%>
+
+</body>
+</html>

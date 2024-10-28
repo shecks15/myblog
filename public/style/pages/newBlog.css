@@ -1,0 +1,81 @@
+.edit-container{
+    margin-top: 200px;
+    margin-left: 100px;
+    width: 629px;
+    height: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.edit-title{
+    text-align: left;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 46px;
+}
+
+.form-group{
+    margin-bottom: 15px;
+}
+
+.form-label{
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.form-input,
+.form-select,
+.form-textarea{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus{
+    border-color: #007bff;
+    outline: none;
+}
+
+.submit-button{
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-button:hover{
+    background-color: #0056b3;
+}
+
+.no-blogs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh; 
+    text-align: center;
+}
+
+#newBlogCentered{
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#newBlogCentered:hover{
+    background-color: #45a049;
+}

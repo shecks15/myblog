@@ -1,0 +1,130 @@
+.head-menu-changed{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.avatar img{
+    width: 72px;
+    height: 73px;
+    border-radius: 50%;
+    color: black;
+}
+
+.left-container-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 65px;
+}
+
+.left-container-header h2{
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 46px;
+}
+
+
+.left-container-header button{
+    background-color: #007BFF;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    width: 122px;
+    height: 50px;
+    margin-top: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.left-container-body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.left-container-body button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin-top: 35px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#menuButton{
+    position: relative; 
+}
+
+.dropdown{
+    display: none;
+    position: absolute; 
+    background-color: white; 
+    border: 1px solid #ccc;
+    top: 85%;
+    left: 75%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    z-index: 1000; 
+}
+
+.dropdown ul{
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown li{
+    padding: 8px 12px;
+}
+
+.dropdown li:hover{
+    background-color: #f0f0f0;
+}
+
+.dropdown a{
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+.right-container-changed{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right-container-changed img{
+    width: 198px;
+    height: 208px;
+    top: 204px;
+    left: 1086px;
+}
+
+.right-container-changed h2{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 46px;
+    margin-right: 15px;
+}
+
+.right-container-changed p{
+    width: 280px;
+    height: 48px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+}
+
+.right-container-changed button{
+    width: 155px;
+    height: 50px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}

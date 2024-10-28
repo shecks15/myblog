@@ -1,0 +1,82 @@
+<html lang="en">
+<head>
+    <%- include("partials/head.ejs")%>
+    <title>Document</title>
+</head>
+<body>
+    <%- include("partials/header.ejs")%>
+    <div class="container">
+        <div class="left-container">
+            <h2>Блоги по программированию</h2>
+            <p>Популярные и лучшие публикации по программированию для начинающих
+                и профессиональных программистов и IT-специалистов.</p>
+        </div>
+        <%
+            if (blogs && blogs.length > 0){
+                blogs.forEach(item => {
+        %>
+            <div class="left-container">
+                <a href="/detail/<%=item._id%>" id="kurica"><h2><%=item.blogTitle %></h2></a>
+                <img id="blogImage" src="<%= item.image %>" alt="">
+                <div class="bottom-text">
+                    <p><%=item.blogDescription %></p>
+                </div>
+                <div class="footer">
+                    <div class="date">
+                        <img src="/images/date.svg" alt="">
+                        <p>26.06.2020</p>
+                    </div>
+                    <div class="date">
+                        <img src="/images/glaz.svg" alt="">
+                        <p>21</p>
+                    </div>
+                    <div class="date">
+                        <a href="/notLogged/<%=item._id%>">
+                            <img src="/images/message.svg" alt="">
+                        </a>
+                        <p>4</p>
+                    </div>
+                    <div class="date">
+                        <img src="/images/forums.svg" alt="">
+                        <p><%=item.category%></p>
+                    </div>
+                    <div class="date">
+                        <img src="/images/person.svg" alt="">
+                        <p><%=item.author.full_name %></p>
+                    </div>
+                </div>
+            </div>
+        <%
+                })
+            }else{
+        %>
+                <p>Блоги не найдены.</p>
+        <% 
+            } 
+        %>
+        
+
+        <div class="right-container">
+            <h2>Категории</h2>
+            <% categories.forEach(category => { %>
+                <a href="/?category=<%= category %><%=`&search=${locals.search}`%>"><%= category %></a>
+            <% }) %>
+        </div>
+    </div>
+    <div class="pagination">
+        <%
+            let localString = '';
+            if(locals.category){ 
+                localString = `&category=${locals.category}&`;
+            } 
+            if(locals.search){
+                localString = `&search=${locals.search}&`;
+            }
+            for (let i = 0; i < pages; i++) { 
+        %>
+            <a href="?<%=localString%>page=<%=i%>"><%=i + 1%></a>
+        <% } %>
+    </div>
+    <%- include("partials/script.ejs")%>
+</body>
+</html>

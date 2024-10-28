@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/head.ejs")%>
+    <title>Document</title>
+</head>
+<body>
+    <%- include("partials/header.ejs")%>
+    <div class="container">
+        <div class="left-container left-container-changed left-container-comments">
+            <div class="footer">
+                <div class="date">
+                    <img src="/images/date.svg" alt="">
+                    <p>26.06.2020</p>
+                </div>
+                <div class="date">
+                    <img src="/images/glaz.svg" alt="">
+                    <p>21</p>
+                </div>
+                <div class="date">
+                    <img src="/images/message.svg" alt="">
+                    <p>4</p>
+                </div>
+                <div class="date">
+                    <img src="/images/forums.svg" alt="">
+                    <p><%=blogs.category%></p>
+                </div>
+                <div class="date">
+                    <img src="/images/person.svg" alt="">
+                    <p><%=blogs.author.full_name %></p>
+                </div>
+            </div>
+            <img src="<%=blogs.image%>" alt="" id="vankok">
+            <div class="bottom-text bottom-text-changed">
+                <h2><%=blogs.blogTitle%></h2>
+                <p><%=blogs.blogDescription%></p>
+            </div>
+            <div class="second-chapter second-chapter-changed">
+                <%
+                    if(user && user._id){
+                %>
+                    <h2>Комментарии</h2>
+                    <form class="write-comment" onSubmit="sendComment(event)">
+                        <textarea id="comment-text"></textarea>
+                        <input type="hidden" value="<%= user._id %>" id="comment-author">
+                        <input type="hidden" value="<%= blogs.id %>" id="comment-blog">
+                        <button type="submit">Отправить</button>
+                    </form>
+                <%
+                    }else{
+                %>
+                <div class="notAuthorized">
+                    <p>Чтобы оставить комментарий <a href="/register">зарегистрируйтесь</a>, или <a href="/login">войдите</a> в аккаунт.</p>
+                </div>
+                <%
+                    }
+                %>
+                <% 
+                    if(comments){
+                        comments.forEach(comment => {
+                %>
+                    <div class="comment-section comment-item">
+                        <div class="comment-header">
+                            <img src="/images/person.svg" alt="Avatar" class="avatar">
+                            <h3><%= comment.authorId.full_name %></h3>
+                            <p><%= comment.formattedTime  %></p>
+                        </div>
+                        <p><%= comment.text %></p>
+                    </div>
+                <%
+                        })
+                    }
+                %>
+            </div>
+        </div>
+    </div>
+    <div class="right-container">
+        <h2>Категории</h2>
+        <a href="">Веб-разработка</a>
+        <a href="">Программирование</a>
+        <a href="">Фриланс</a>
+        <a href="">Разработка игр</a>
+        <a href="">Дизайн и юзабилити</a>
+        <a href="">Искуственный интелект</a>
+        <a href="">Машинное обучение</a>
+    </div>
+    <%- include("partials/script.ejs")%>
+</body>
+</html>

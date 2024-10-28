@@ -1,0 +1,105 @@
+.second-chapter-changed{
+    text-align: left;
+    padding: 0 3%;
+}
+
+.second-chapter-changed h2{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+}
+
+.second-chapter-changed h3{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    margin-bottom: 20px;
+}
+
+.comment-content p{
+    margin-top: -15px;
+}
+
+.write-comment{
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.write-comment textarea{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.write-comment button{
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.write-comment button:hover{
+    background-color: #0056b3;
+}
+
+.left-container-changed{
+    padding: 20px;
+    top: 60px;
+}
+
+.left-container-comments{
+    top: 80px;
+}
+
+.bottom-text-changed{
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
+}
+
+.comment-item{
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    padding: 10px;
+    margin: 10px 0; 
+    background-color: #f9f9f9; 
+}
+
+.comment-header{
+    display: flex; 
+    align-items: center; 
+}
+
+.avatar{
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    margin-right: 10px; 
+}
+
+.comment-item h3{
+    margin: 0; 
+    font-size: 16px;
+    color: #333;
+}
+
+.comment-item p{
+    margin: 10px 10px 0; 
+    color: #555; 
+}
+
+#vankok{
+    max-width: 500px;
+    max-height: auto;
+}
+
+.comment-header p{
+    margin-left: 650px;
+    margin-top: -5px;
+}
+

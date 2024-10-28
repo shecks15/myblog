@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/head.ejs")%>
+    <title>Document</title>
+</head>
+<body>
+    <%- include("partials/header.ejs")%>
+    <div class="edit-container">
+        <h2 class="edit-title">Новый блог</h2>
+        <form action="/api/blogs/new" method="POST" id="editBlogForm" class="edit-form" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="blogTitle" class="form-label">Введите заголовок блога:</label>
+                <input type="text" id="blogTitle" name="blogTitle" class="form-input" required>
+            </div>
+            <div class="form-group">
+                <label for="category" class="form-label">Выберите категорию:</label>
+                <select id="category" name="category" class="form-select" required>
+                    <option value="">--Выберите категорию--</option>
+                    <option value="programming">Программирование</option>
+                    <option value="web-development">Веб-разработка</option>
+                    <option value="design">Дизайн</option>
+                    <option value="ai">Искусственный интеллект</option>
+                    <option value="game-dev">Разработка игр</option>
+                    <option value="freelance">Фриланс</option>
+                    <option value="machine-learning">Машинное обучение</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="imageUpload" class="form-label">Выберите картинку:</label>
+                <input type="file" id="imageUpload" name="image" class="form-input" accept="image/*" required>
+            </div>
+            <div class="form-group">
+                <label for="blogDescription" class="form-label">Введите описание блога:</label>
+                <textarea id="blogDescription" name="blogDescription" class="form-textarea" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Создать</button>
+        </form>
+    </div>
+    <%- include("partials/script.ejs")%>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/head.ejs")%>
+    <title>Document</title>
+</head>
+<body>
+    <%- include("partials/header.ejs")%>
+        <div class="container1">
+            <h1 class="blog-title"><%= blogs.blogTitle%></h1>
+            <div class="content-wrapper">
+                <div class="blog-image">
+                    <img src="<%= blogs.image%>" alt="Blog Image">
+                </div>
+                <div class="blog-details">
+                    <p class="category">Категория: <%= blogs.category %></p>
+                    <p class="description">Описание блога: <%= blogs.blogDescription %></p>
+                    <a href="/another/<%= blogs.author._id %>">Автор блога: <%= blogs.author.full_name %></a>
+                </div>
+            </div>  
+        </div>
+    <%- include("partials/script.ejs")%>
+</body>
+</html>

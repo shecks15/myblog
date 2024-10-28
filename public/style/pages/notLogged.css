@@ -1,0 +1,22 @@
+.notAuthorized{
+    background: #FFF3CD;
+    padding: 1px 1px;
+    margin-bottom: 50px;
+}
+
+.notAuthorized p{
+    margin-left: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 46px;
+    color: brown;
+}
+
+.notAuthorized a{
+    text-decoration: none;
+    color: blue;
+}
+
+.container-changed{
+    margin-bottom: 40px;
+}

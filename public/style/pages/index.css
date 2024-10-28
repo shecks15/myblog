@@ -1,0 +1,145 @@
+.container{
+    position: relative;
+}
+
+.left-container{
+    width: 892px;
+    height: auto;
+    position: relative;
+    top: 60px;
+    background-color: white;
+    text-align: center;
+}
+
+.left-container h2{
+    font-size: 36px;
+    line-height: 46px;
+    color: #000000;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#kurica{
+    font-size: 36px;
+    line-height: 46px;
+    color: #000000;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.left-container p{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 40px;
+}
+
+.bottom-text{
+    padding: 0 62px;
+}
+
+.bottom-text h2{
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    margin-top: 50px;
+}
+
+.bottom-text p{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 62px;
+}
+
+.date{
+    display: flex;
+    align-items: center;
+}
+
+.date p{
+    font-size: 16px;
+    font-weight: 400;
+    margin-left: 10px;
+    margin-top: 40px;
+}
+
+.date p:nth-child(2n){
+    margin-right: 20px; 
+}
+
+.date img{
+    width: 24px;
+    height: 28.22px;
+}
+
+.right-container{
+    background-color: white;
+    width: 313px;
+    height: auto;
+    position: absolute;
+    top: 179px;
+    left: 1027px;
+}
+
+.right-container h2{
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 46px;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.right-container a{
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 46px;
+    margin-left: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+#blogImage{
+    max-width: 400px;
+    max-height: 400px;
+}
+
+.pagination{
+    display: flex;
+    justify-content: center; 
+    margin-top: 20px; 
+    margin-bottom: 20px;
+}
+
+.pagination a{
+    text-decoration: none;
+    padding: 8px 16px;
+    background-color: violet;
+    color: #333;
+    margin: 0 5px;
+    border-radius: 4px;
+}
+
+.pagination a:hover{
+    background-color: #ddd;
+}
+
+.right-container-changed{
+    top: 160px;
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/head.ejs")%>
+    <title>Document</title>
+</head>
+<body>
+    <%- include("partials/header.ejs")%>
+    <div class="container">
+        <% 
+            if (blogs.length === 0) { 
+        %>
+            <div class="no-blogs">
+                <% if(user._id){ %>
+                    <h2>У вас еще нет блогов</h2>
+                    <a href="/new"><button id="newBlogCentered">Новый блог</button></a>
+                <% }else{ %>
+                    <h2>Вы не авторизованы. <a href="/login">Войдите</a> в аккаунт </h2>
+                <% } %>
+            </div>
+        <% } else { %>
+        <%
+            blogs.forEach(item => {
+                if (item.author._id.equals(user._id)) {
+        %>
+        <div class="left-container">
+            <div class="left-container-header">
+                <h2>Мой блог</h2>
+                <a href="/new"><button id="newBlog">Новый блог</button></a>
+            </div>
+            <img id="blogImage" src="<%= item.image %>" alt="">
+            <div class="bottom-text">
+                <div class="left-container-body">
+                    <h2><%=item.blogTitle%></h2>
+                    <button class="menuButton">⋮ Еще</button>
+                    <div class="dropdown" style="display: none;">
+                        <ul>
+                            <li><a href="/edit/<%=item._id%>">Редактировать</a></li>
+                            <li><a onclick="deleteBlogs(`<%=item._id%>`, `<%=item.author._id%>`)">Удалить</a></li>
+                        </ul>   
+                    </div>
+                </div>
+                <p>
+                    <%=item.blogDescription%>   
+                </p>
+            </div>
+            <div class="footer">
+                <div class="date">
+                    <img src="/images/date.svg" alt="">
+                    <p>26.06.2020</p>
+                </div>
+                <div class="date">
+                    <img src="/images/glaz.svg" alt="">
+                    <p>21</p>
+                </div>
+                <div class="date">
+                    <a href="/notLogged/<%=item._id%>">
+                        <img src="/images/message.svg" alt="">
+                    </a>
+                    <p>4</p>
+                </div>
+                <div class="date">
+                    <img src="/images/forums.svg" alt="">
+                    <%= item.category %>
+                </div>
+            </div>
+            <hr class="divider"> 
+        </div>
+        <%
+                }   
+            })
+        %>
+        <% } %>
+        <div class="right-container right-container-changed">
+            <img src="/images/person.svg" alt="">
+            <h2><%=user.full_name%></h2>
+            <% 
+                if(user.isAdmin){
+            %>
+                <p>В основном пишу про <br>веб - разработку, на React & Redux</p><br>
+                <p>285 постов за все время</p>
+                <button id="edit">Редактировать</button>
+            <%
+                }
+            %>
+        </div>
+    </div>
+    <%- include("partials/script.ejs")%>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuButtons = document.querySelectorAll(".menuButton");
+            const dropdowns = document.querySelectorAll(".dropdown");
+
+            menuButtons.forEach((button, index) => {
+                const dropdownMenu = dropdowns[index];
+
+                button.addEventListener("click", function() {
+                    if (dropdownMenu.style.display === "none" || dropdownMenu.style.display === "") {
+                        dropdownMenu.style.display = "block";
+                    } else {
+                        dropdownMenu.style.display = "none";
+                    }
+                });
+
+                document.addEventListener("click", function(event) {
+                    if (!button.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                        dropdownMenu.style.display = "none";
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
